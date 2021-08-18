@@ -11,6 +11,6 @@ module.exports = {
     // Execute Command - Parameters: message
     execute(message) {
         // Send Message
-        message.channel.send('Poooooong!');
+        message.channel.send('Pooooooong!');
     },
 };
