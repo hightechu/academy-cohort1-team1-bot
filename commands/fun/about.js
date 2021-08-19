@@ -16,8 +16,8 @@ module.exports = {
             .setColor('#ffffff')
             .setTitle('About us')
             .setURL('')
-            .setAuthor('ChangeItLater', '', '')
-            .setDescription('we are a open-source bot made by Humberto, Concrad, Kyle, Bilal. Also HighTechU since they made this super complex code that I have no idea what it means but copying made it easy(-Humberto).')
+            .setAuthor('SchEduHealth', '', '')
+            .setDescription('we are a open-source bot made by Humberto, Conrad, Kyle, Bilal. Also HighTechU since they made this super complex code that I have no idea what it means but copying made it easy(-Humberto).')
             .setThumbnail('https://pbs.twimg.com/profile_images/1349456985557757967/cUPt5g5F_400x400.jpg')
             .addFields(
                 { name: 'GitHub Repo', value: 'Our github repo is: https://github.com/hightechu/academy-cohort1-team1-bot' },
