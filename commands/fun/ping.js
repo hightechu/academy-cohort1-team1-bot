@@ -13,6 +13,7 @@ module.exports = {
     // Execute Command - Parameters: message
     execute(message) {
         // Send Message
+ team1bot
         message.channel.send('bruh').then(sentMessage => {
             // Add Reaction
             sentMessage.react('😪');
