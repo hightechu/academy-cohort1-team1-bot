@@ -1,11 +1,9 @@
-// Ping Module
-
 module.exports = {
     
     // Name of Command
-    name: 'ping',
+    name: '1meme',
     // Description of Command
-    description: 'Ping Pong the battle of speeds!',
+    description: 'The Legend of Marquise. Also a easter egg!!!!',
     // Guild - TRUE
     guildOnly: true,
     // Cooldown
@@ -13,10 +11,6 @@ module.exports = {
     // Execute Command - Parameters: message
     execute(message) {
         // Send Message
- team1bot
-        message.channel.send('bruh').then(sentMessage => {
-            // Add Reaction
-            sentMessage.react('😪');
-        });
-    },
-};
+        message.channel.send('https://cdn.discordapp.com/attachments/792876186765885452/877791014801260565/video0.mp4')
+        }
+    }

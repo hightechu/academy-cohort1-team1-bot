@@ -61,7 +61,7 @@ client.on('message', message => {
 
     // Message Only for Discord Server Channels
     if (command.guildOnly && message.channel.type === 'dm') {
-        return message.reply('I can\'t execute that command inside DMs!');
+        return message.reply('I can\'t execute that command inside DMs bro you forgot!!');
     }
 
     // Check Permissions
