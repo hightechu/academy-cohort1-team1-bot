@@ -1,11 +1,11 @@
 // View Elements Module
 module.exports = {
     // Name of Command
-    name: 'view-elements',
+    name: 'view-timed-events',
     // Description of Command
-    description: 'View all your elements.',
+    description: 'View all your events.',
     // Aliases
-    aliases: ['elements'],
+    aliases: ['vte'],
     // Execute Command - Paramenters: message, args, firebase
     execute(message, args, firebase) {
         if (args[0]) {
@@ -19,9 +19,10 @@ module.exports = {
         let db = firebase.firestore();
 
         // Create Element Item
-        function addBotMessage(element) {
+        function addBotMessage(date,event) {
             botMessage.push('\u200B');
-            botMessage.push('> **Element:** ' + element);
+            botMessage.push('> **Date:** ' + date);
+            botMessage.push('> **Event:** ' + event);
         }
 
         // Send Message
@@ -32,38 +33,39 @@ module.exports = {
         }
 
         // Get All the Users Elements
-        function getAllElements() {
+        function getAllEvents() {
             db.collection(message.author.id).get().then((querySnapshot) => {
                 if (querySnapshot.empty) {
-                    return message.reply(`you don't have any current elements.`);
+                    return message.reply(`you don't have any current events.`);
                 }
 
-                botMessage.push('Your Elements!');
+                botMessage.push('Your Events!');
 
                 querySnapshot.forEach((doc) => {
-                    if (doc.data().elementName) {
-                        addBotMessage(doc.data().elementName);
-                        addBotMessage(doc.data().eventDate);
+                    if (doc.data().eventName && doc.data().eventDate) {
+                            addBotMessage((doc.data().eventDate), (doc.data().eventName));
                     }
+
+                        
                 });
             }).then(() => {
                 sendMessage();
             }).catch((error) => {
                 console.log(error);
-                return message.reply('Sorry, there was an error trying to view elements.');
+                return message.reply('Sorry, there was an error trying to view events.');
             });
         }
 
         // Get All Elements Promise
-        const getAllElementsPromise = new Promise((resolve, _reject) => {
+        const getAllEventsPromise = new Promise((resolve, _reject) => {
             resolve();
         });
 
-        getAllElementsPromise.then(() => {
-            getAllElements();
+        getAllEventsPromise.then(() => {
+            getAllEvents();
         }).catch((error) => {
             console.log(error);
-            return message.reply('Sorry, there was an error trying to view elements.');
+            return message.reply('Sorry, there was an error trying to view events.');
         });
     },
 };
