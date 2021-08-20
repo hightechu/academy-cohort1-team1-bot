@@ -43,7 +43,6 @@ module.exports = {
                 querySnapshot.forEach((doc) => {
                     if (doc.data().elementName) {
                         addBotMessage(doc.data().elementName);
-                        addBotMessage(doc.data().eventDate);
                     }
                 });
             }).then(() => {

@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/hightechu/hightechu-discord-bot#readme",
   "dependencies": {
+    "dayjs": "^1.10.6",
     "discord.js": "^12.5.3",
     "dotenv": "^8.2.0",
     "firebase": "^8.3.2",
