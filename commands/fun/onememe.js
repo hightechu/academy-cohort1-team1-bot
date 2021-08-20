@@ -11,6 +11,6 @@ module.exports = {
     // Execute Command - Parameters: message
     execute(message) {
         // Send Message
-        message.channel.send('https://cdn.discordapp.com/attachments/792876186765885452/877791014801260565/video0.mp4')
+        message.channel.send('https://cdn.discordapp.com/attachments/876953010465570838/878375643547570216/cow_walk.mp4')
         }
     }
