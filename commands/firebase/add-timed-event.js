@@ -1,5 +1,3 @@
-//const addElement = require("./add-element");
-
 module.exports = {
     //Name of command
     name: 'add-timed-event',
@@ -10,17 +8,25 @@ module.exports = {
     //Arguments TRUE
     args: true,
     
-    usage: '[event]', //Trying as event for now
-
-    //Name of event tttt/dd/mm/yy
+    usage: '[event]', 
 
     execute(message, args, firebase) {
-        const eventInformation = args; //Ask why it isn't set to true inside the method
         let db = firebase.firestore();
+        
+        var dateEvent = args[0];
+        var nameEvent = args[1];
+        for (i = 2; i < args.length; i++) {
+            nameEvent = nameEvent + ' ' + args[i];
+        }
+        
+        console.log(dateEvent);
+        console.log(nameEvent);
+
+        
         function addEvent() {
             db.collection(message.author.id).add({
-                eventName: eventInformation[0],
-                eventDate: eventInformation[1],
+                eventName: nameEvent,
+                eventDate: dateEvent,
                 eventAuthor: message.author.username
             }).then((docRef) => {
                 console.log('Document written with ID: ', docRef.id);
